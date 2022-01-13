@@ -11,7 +11,6 @@
     <StackPanel>
         <StackPanel>
             <TextBox PlaceholderText="Who would you like to call?" TextWrapping="Wrap" x:Name="CalleeTextBox" Margin="10,10,10,10"></TextBox>
-            <TextBox PlaceholderText="TokenCredential" TextWrapping="Wrap" x:Name="TokenCredentialTextBox" Margin="10,10,10,10"></TextBox>
             <Button Content="Start Call" Click="CallButton_ClickAsync" x:Name="CallButton" Margin="10,10,10,10"></Button>
             <Button Content="Hang Up" Click="HangupButton_Click" x:Name="HangupButton" Margin="10,10,10,10"></Button>
         </StackPanel>

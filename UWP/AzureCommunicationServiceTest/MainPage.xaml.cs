@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-// 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
 namespace AzureCommunicationServiceTest
 {
@@ -17,6 +16,11 @@ namespace AzureCommunicationServiceTest
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        CallAgent callAgent;
+        Call call;
+        DeviceManager deviceManager;
+        LocalVideoStream[] localVideoStream;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -28,7 +32,7 @@ namespace AzureCommunicationServiceTest
             CallClient callClient = new CallClient();
             deviceManager = await callClient.GetDeviceManager();
 
-            CommunicationTokenCredential token_credential = new CommunicationTokenCredential(TokenCredentialTextBox.Text);
+            CommunicationTokenCredential token_credential = new CommunicationTokenCredential(Constants.TokenCredential);
 
             CallAgentOptions callAgentOptions = new CallAgentOptions()
             {
@@ -159,11 +163,5 @@ namespace AzureCommunicationServiceTest
                     break;
             }
         }
-
-        //CallClient callClient;
-        CallAgent callAgent;
-        Call call;
-        DeviceManager deviceManager;
-        LocalVideoStream[] localVideoStream;
     }
 }
